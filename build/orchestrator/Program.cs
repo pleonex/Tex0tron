@@ -13,7 +13,8 @@ public sealed class BuildLifetime : FrostingLifetime<PleOpsBuildContext>
 {
     public override void Setup(PleOpsBuildContext context, ISetupContext info)
     {
-        // Update build parameters from command line arguments.
+        context.WarningsAsErrors = false;
+
         context.ReadArguments();
 
         context.DotNetContext.ApplicationProjects.Add(new ProjectPublicationInfo(
