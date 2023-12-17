@@ -3,7 +3,7 @@
     <Product>PleOps</Product>
     <Authors>pleonex</Authors>
     <Company>None</Company>
-    <Copyright>Copyright (C) 2020 Benito Palacios Sánchez</Copyright>
+    <Copyright>Copyright (C) 2019 pleonex</Copyright>
 
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
@@ -14,9 +14,9 @@
 
   <PropertyGroup>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/pleonex/template-csharp</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/pleonex/template-csharp</RepositoryUrl>
-    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/pleonex/Tex0tron</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/pleonex/Tex0tron</RepositoryUrl>
+    <!-- <PackageIcon>icon.png</PackageIcon> -->
     <PackageTags>net;csharp;devops;pipeline;github-actions</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>

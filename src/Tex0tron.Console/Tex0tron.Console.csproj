@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../MyLibrary/MyLibrary.csproj" />
+    <ProjectReference Include="../Tex0tron/Tex0tron.csproj" />
   </ItemGroup>
 
 </Project>
