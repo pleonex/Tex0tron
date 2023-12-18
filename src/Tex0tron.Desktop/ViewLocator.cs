@@ -1,22 +1,22 @@
+﻿namespace Tex0tron.Desktop;
+
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using Tex0tron.Desktop.ViewModels;
 
-namespace Tex0tron.Desktop;
-
 public class ViewLocator : IDataTemplate
 {
     public Control? Build(object? data)
     {
-        if (data is null)
+        if (data is null) {
             return null;
+        }
         
         var name = data.GetType().FullName!.Replace("ViewModel", "View", StringComparison.Ordinal);
         var type = Type.GetType(name);
 
-        if (type != null)
-        {
+        if (type != null) {
             var control = (Control)Activator.CreateInstance(type)!;
             control.DataContext = data;
             return control;

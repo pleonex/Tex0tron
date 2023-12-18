@@ -1,7 +1,7 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿namespace Tex0tron.Desktop.ViewModels;
 
-namespace Tex0tron.Desktop.ViewModels;
+using CommunityToolkit.Mvvm.ComponentModel;
 
-public class ViewModelBase : ObservableObject
+public abstract class ViewModelBase : ObservableObject
 {
 }

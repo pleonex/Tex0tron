@@ -3,7 +3,6 @@
              x:Class="Tex0tron.Desktop.App"
              xmlns:local="using:Tex0tron.Desktop"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
         <local:ViewLocator/>

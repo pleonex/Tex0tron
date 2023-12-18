@@ -1,12 +1,11 @@
+﻿namespace Tex0tron.Desktop;
+
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Tex0tron.Desktop.ViewModels;
 using Tex0tron.Desktop.Views;
-
-namespace Tex0tron.Desktop;
 
 public partial class App : Application
 {
