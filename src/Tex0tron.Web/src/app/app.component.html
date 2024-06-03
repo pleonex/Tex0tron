@@ -1,0 +1,14 @@
+<header>
+  <nav>
+    <h5 class="max center-align">{{title}}</h5>
+    <button class="circle transparent" (click)="changeTheme()">
+      @if (isLight) {
+        <i>light_mode</i>
+      } @else {
+        <i>dark_mode</i>
+      }
+    </button>
+  </nav>
+</header>
+
+<router-outlet />

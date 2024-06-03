@@ -20,6 +20,13 @@
             "type": "coreclr",
             "request": "attach",
             "processId": "${command:pickProcess}"
+        },
+        {
+            "name": "[Web] Run debug",
+            "type": "firefox",
+            "request": "launch",
+            "preLaunchTask": "[Web] Start debug",
+            "url": "http://localhost:4200/"
         }
     ]
 }

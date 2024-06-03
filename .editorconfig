@@ -4,6 +4,9 @@ root = true
 # All files
 [*]
 indent_style = space
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
 
 [*.yml]
 indent_size = 2
@@ -12,9 +15,12 @@ indent_size = 2
 charset = utf-8
 insert_final_newline = true
 end_of_line = unset # Leave it to git
-indent_style = space
 indent_size = 2
 max_line_length = 80
+
+[*.ts]
+quote_type = single
+indent_size = 2
 
 # XML project files
 [*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]

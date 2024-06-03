@@ -32,5 +32,27 @@
             "problemMatcher": ["$msCompile"],
             "label": "Bundle"
         },
+        {
+            "type": "npm",
+            "script": "start",
+            "label": "[Web] Start debug",
+            "isBackground": true,
+            "options": {
+              "cwd": "src/Tex0tron.Web"
+            },
+            "problemMatcher": {
+              "owner": "typescript",
+              "pattern": "$tsc",
+              "background": {
+                "activeOnStart": true,
+                "beginsPattern": {
+                  "regexp": "(.*?)"
+                },
+                "endsPattern": {
+                  "regexp": "bundle generation complete"
+                }
+              }
+            }
+          }
     ]
 }
