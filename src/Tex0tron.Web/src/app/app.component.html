@@ -1,0 +1,20 @@
+<header>
+  <nav>
+    <h5 class="max center-align">{{title}}</h5>
+    <button class="circle transparent" (click)="changeTheme()">
+      @if (isLight) {
+        <i>light_mode</i>
+      } @else {
+        <i>dark_mode</i>
+      }
+    </button>
+  </nav>
+</header>
+
+<main class="responsive">
+  <tex0-value></tex0-value>
+
+  <div class="space"></div>
+
+  <tex0-form></tex0-form>
+</main>

@@ -1,0 +1,49 @@
+<div [formGroup]="parentForm()"
+     class="field label suffix"
+     [class.invalid]="!isValid">
+  @switch (fieldInfo().type) {
+    @case ("number") {
+      <input [formControlName]="fieldInfo().name"
+             required
+             [id]="fieldInfo().name"
+             [max]="fieldInfo().maxValue ?? 0"
+             min="0"
+             type="number">
+      <label [attr.for]="fieldInfo().name">{{fieldInfo().name | pascalcase}}</label>
+      <i>numbers</i>
+    }
+
+    @case ("pixel-storage") {
+      <select [formControlName]="fieldInfo().name"
+              [id]="fieldInfo().name">
+        @for (pixelFormat of pixelStorageFormats; track pixelFormat) {
+          <option [value]="pixelFormat">{{PixelStorageFormat2Label[pixelFormat]}}</option>
+        }
+      </select>
+      <label [attr.for]="fieldInfo().name">{{fieldInfo().name | pascalcase}}</label>
+      <i>arrow_drop_down</i>
+    }
+    @case ("bool") {
+      <label class="checkbox">
+        <input type="checkbox" [formControlName]="fieldInfo().name" [id]="fieldInfo().name">
+        <span>{{fieldInfo().name | pascalcase}}</span>
+      </label>
+    }
+  }
+
+  @if (isValid) {
+    <span class="helper">Bits: [{{fieldInfo().bitStart}},{{fieldInfo().bitEnd}}]</span>
+  } @else {
+    <span class="error">
+      @if (hasError("required")) {
+        Component required.
+      } @else if (hasError("max")) {
+        Value bigger than allowed.
+      } @else if (hasError("multipleOf")) {
+        Value is not a valid multiple.
+      } @else {
+        There was an unknown error.
+      }
+    </span>
+  }
+</div>

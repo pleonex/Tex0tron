@@ -1,0 +1,21 @@
+<article class="secondary-container">
+  <header>
+    <h5>TEX0 parameter</h5>
+  </header>
+  <div class="field border label prefix"
+       [class.invalid]="!valueBox.validity.valid">
+    <i>numbers</i>
+    <input required
+        #valueBox
+        id="tex0value"
+        type="text"
+        required
+        pattern="0x([0-9a-fA-F]+)"
+        [(ngModel)]="tex0Value">
+    <label for="tex0value">Hexadecimal value</label>
+
+    @if (valueBox.validationMessage) {
+      <span class="error">{{valueBox.validationMessage}}</span>
+    }
+  </div>
+</article>

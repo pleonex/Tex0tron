@@ -5,6 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "[Web] Run debug",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "url": "http://localhost:4200/",
+            "pathMappings": [
+              {
+                "url": "http://localhost:4200",
+                "path": "${workspaceFolder}/src/Tex0tron.Web"
+              }
+            ]
+        },
+        {
             "name": "Run MyConsole",
             "type": "coreclr",
             "request": "launch",

@@ -1,0 +1,17 @@
+<article>
+  <header>
+    <h5>Detailed fields</h5>
+  </header>
+
+  <form [formGroup]="tex0Form">
+    <div class="grid">
+      @for (fieldsCol of fieldsByColumns; track $index) {
+        <div class="s6 m6 l3">
+          @for (field of fieldsCol; track field.name) {
+            <tex0-field [parentForm]="tex0Form" [fieldInfo]="field"></tex0-field>
+          }
+        </div>
+      }
+    </div>
+  </form>
+</article>
