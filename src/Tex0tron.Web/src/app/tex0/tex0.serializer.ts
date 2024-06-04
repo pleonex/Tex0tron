@@ -19,6 +19,17 @@ export class Tex0Serializer {
   }
 
   static serialize(value: Tex0): number {
-    return 0;
+    return ((value.textureBasePointer / 64) & 0x3FFF)
+      | (((value.textureBufferWidth / 64) & 0x3F) << 14)
+      | ((value.texturePixelFormat & 0x3F) << 20)
+      | ((Math.log2(value.width) & 0xF) << 26)
+      | ((Math.log2(value.height) & 0xF) << 30)
+      | ((value.hasAlpha ? 1 : 0) << 34)
+      | ((value.textureFunction & 0x3) << 35)
+      | (((value.clutBufferBasePointer / 64) & 0x3FFF) << 37)
+      | ((value.clutPixelFormat & 0xF) << 51)
+      | ((value.clutStorageMode & 0x1) << 55)
+      | (((value.clutEntryOffset / 16) & 0x1F) << 56)
+      | ((value.clutBufferLoadControl & 0x7) << 61);
   }
 }

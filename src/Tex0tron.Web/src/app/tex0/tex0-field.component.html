@@ -1,5 +1,5 @@
 <div [formGroup]="parentForm()"
-     class="field label suffix small"
+     class="field label suffix"
      [class.invalid]="!isValid">
   @switch (fieldInfo().type) {
     @case ("number") {
@@ -30,12 +30,14 @@
   }
 
   @if (isValid) {
+    <span class="helper">Bits: [{{fieldInfo().bitStart}},{{fieldInfo().bitEnd}}]</span>
+  } @else {
     <span class="error">
       @if (hasError("required")) {
         Component required.
+      } @else {
+        There was an unknown error.
       }
     </span>
-  } @else {
-    <span class="helper">Bits: [{{fieldInfo().bitStart}},{{fieldInfo().bitEnd}}]</span>
   }
 </div>
