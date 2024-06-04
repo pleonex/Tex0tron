@@ -17,6 +17,7 @@ public sealed class BuildLifetime : FrostingLifetime<Tex0tronBuildContext>
     public override void Setup(Tex0tronBuildContext context, ISetupContext info)
     {
         context.WarningsAsErrors = false;
+        context.AngularContext.Configuration = "production";
 
         context.ReadArguments();
 
@@ -38,7 +39,7 @@ public sealed class BuildLifetime : FrostingLifetime<Tex0tronBuildContext>
 [IsDependentOn(typeof(Cake.Frosting.PleOps.Recipe.Common.SetGitVersionTask))]
 [IsDependentOn(typeof(Cake.Frosting.PleOps.Recipe.Common.CleanArtifactsTask))]
 [IsDependentOn(typeof(Cake.Frosting.PleOps.Recipe.Dotnet.DotnetTasks.BuildProjectTask))]
-[IsDependentOn(typeof(NpmRestoreTask))]
+[IsDependentOn(typeof(AngularTasks.BuildProjectTask))]
 public sealed class DefaultTask : FrostingTask
 {
 }
