@@ -7,7 +7,7 @@
              required
              [id]="fieldInfo().name"
              type="number">
-      <label [attr.for]="fieldInfo().name">{{fieldInfo().name | titlecase}}</label>
+      <label [attr.for]="fieldInfo().name">{{fieldInfo().name | pascalcase}}</label>
       <i>numbers</i>
     }
 
@@ -18,13 +18,13 @@
           <option>{{pixelFormat}}</option>
         }
       </select>
-      <label [attr.for]="fieldInfo().name">{{fieldInfo().name | titlecase}}</label>
+      <label [attr.for]="fieldInfo().name">{{fieldInfo().name | pascalcase}}</label>
       <i>arrow_drop_down</i>
     }
     @case ("bool") {
       <label class="checkbox">
         <input type="checkbox" [formControlName]="fieldInfo().name" [id]="fieldInfo().name">
-        <span>{{fieldInfo().name | titlecase}}</span>
+        <span>{{fieldInfo().name | pascalcase}}</span>
       </label>
     }
   }

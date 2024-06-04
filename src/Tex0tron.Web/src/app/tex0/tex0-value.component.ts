@@ -17,8 +17,14 @@ export class Tex0ValueComponent implements OnDestroy {
     return this._tex0Value;
   }
   set tex0Value(value: string) {
-    if (!value && value !== "0") {
+    if (value.length < 3 || !value.startsWith("0x")) {
       console.log("Invalid value");
+      return;
+    }
+
+    const num = Number(value);
+    if (isNaN(num)) {
+      console.log("Invalid number");
       return;
     }
 
@@ -30,7 +36,7 @@ export class Tex0ValueComponent implements OnDestroy {
   }
 
   constructor(private tex0Service: Tex0Service) {
-    this._tex0Sub = tex0Service.tex0Value$.subscribe(v => this.tex0Value = v.toString());
+    this._tex0Sub = tex0Service.tex0Value$.subscribe(v => this.tex0Value = "0x" + v.toString(16));
   }
 
   ngOnDestroy(): void {

@@ -1,14 +1,15 @@
 import { Component, computed, input } from "@angular/core";
 import { ITex0Field } from "./tex0-field";
 import { FormGroup, ReactiveFormsModule } from "@angular/forms";
-import { CommonModule, TitleCasePipe } from "@angular/common";
+import { CommonModule } from "@angular/common";
 import { PixelStorageFormat } from "./tex0";
+import { PascalCasePipe } from "../shared/pascalcase.pipe";
 
 @Component({
   selector: "tex0-field",
   templateUrl: "./tex0-field.component.html",
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TitleCasePipe],
+  imports: [CommonModule, ReactiveFormsModule, PascalCasePipe],
 })
 export class Tex0FieldComponent {
   fieldInfo = input.required<ITex0Field>();
