@@ -5,6 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "[Web] Run debug",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "preLaunchTask": "[Web] Start debug",
+            "url": "http://localhost:4200/",
+            "webRoot": "${workspaceFolder}/src/Tex0tron.Web"
+        },
+        {
             "name": "Run MyConsole",
             "type": "coreclr",
             "request": "launch",
@@ -20,13 +29,6 @@
             "type": "coreclr",
             "request": "attach",
             "processId": "${command:pickProcess}"
-        },
-        {
-            "name": "[Web] Run debug",
-            "type": "firefox",
-            "request": "launch",
-            "preLaunchTask": "[Web] Start debug",
-            "url": "http://localhost:4200/"
         }
     ]
 }
