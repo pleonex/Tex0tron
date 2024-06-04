@@ -2,7 +2,7 @@ import { Component, computed, input } from "@angular/core";
 import { ITex0Field } from "./tex0-field";
 import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
-import { PixelStorageFormat } from "./tex0";
+import { PixelStorageFormat, PixelStorageFormat2Label } from "./tex0";
 import { PascalCasePipe } from "../shared/pascalcase.pipe";
 
 @Component({
@@ -16,12 +16,13 @@ export class Tex0FieldComponent {
   parentForm = input.required<FormGroup>();
   formControl = computed(() => this.parentForm().controls[this.fieldInfo().name]);
 
-  pixelStorageFormats: string[];
+  pixelStorageFormats: PixelStorageFormat[];
+  PixelStorageFormat2Label = PixelStorageFormat2Label;
 
   constructor() {
     this.pixelStorageFormats = Object.values(PixelStorageFormat)
-      .filter(v => isNaN(Number(v)))
-      .map(v => v as string);
+      .filter(v => !isNaN(Number(v)))
+      .map(v => v as number);
   }
 
   get isValid() {

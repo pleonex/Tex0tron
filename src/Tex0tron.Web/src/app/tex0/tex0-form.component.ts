@@ -6,6 +6,7 @@ import { ITex0Field } from "./tex0-field";
 import { Tex0Service } from "./tex0.service";
 import { Subscription } from "rxjs";
 import { Tex0 } from "./tex0";
+import { multipleOfValidator } from "../shared/multipleof.validator";
 
 @Component({
   selector: "tex0-form",
@@ -45,7 +46,12 @@ export class Tex0FormComponent implements OnInit, OnDestroy {
 
     const formFields: {[id: string]: FormControl} = {};
     for (const fieldInfo of this.fields) {
-      formFields[fieldInfo.name] = new FormControl();
+      const extraValidators = [];
+      if (fieldInfo.multipleOf) {
+        extraValidators.push(multipleOfValidator(fieldInfo.multipleOf));
+      }
+
+      formFields[fieldInfo.name] = new FormControl("", extraValidators);
     }
 
     this.tex0Form = new FormGroup(formFields);

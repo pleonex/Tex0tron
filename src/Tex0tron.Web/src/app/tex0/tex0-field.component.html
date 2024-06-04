@@ -6,6 +6,8 @@
       <input [formControlName]="fieldInfo().name"
              required
              [id]="fieldInfo().name"
+             [max]="fieldInfo().maxValue ?? 0"
+             min="0"
              type="number">
       <label [attr.for]="fieldInfo().name">{{fieldInfo().name | pascalcase}}</label>
       <i>numbers</i>
@@ -15,7 +17,7 @@
       <select [formControlName]="fieldInfo().name"
               [id]="fieldInfo().name">
         @for (pixelFormat of pixelStorageFormats; track pixelFormat) {
-          <option>{{pixelFormat}}</option>
+          <option [value]="pixelFormat">{{PixelStorageFormat2Label[pixelFormat]}}</option>
         }
       </select>
       <label [attr.for]="fieldInfo().name">{{fieldInfo().name | pascalcase}}</label>
@@ -35,6 +37,10 @@
     <span class="error">
       @if (hasError("required")) {
         Component required.
+      } @else if (hasError("max")) {
+        Value bigger than allowed.
+      } @else if (hasError("multipleOf")) {
+        Value is not a valid multiple.
       } @else {
         There was an unknown error.
       }
