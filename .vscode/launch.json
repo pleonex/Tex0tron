@@ -9,9 +9,13 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "preLaunchTask": "[Web] Start debug",
             "url": "http://localhost:4200/",
-            "webRoot": "${workspaceFolder}/src/Tex0tron.Web"
+            "pathMappings": [
+              {
+                "url": "http://localhost:4200",
+                "path": "${workspaceFolder}/src/Tex0tron.Web"
+              }
+            ]
         },
         {
             "name": "Run MyConsole",

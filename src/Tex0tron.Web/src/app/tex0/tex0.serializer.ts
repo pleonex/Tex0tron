@@ -17,4 +17,8 @@ export class Tex0Serializer {
       clutBufferLoadControl: (value >> 61) & 0x7,
     } as Tex0;
   }
+
+  static serialize(value: Tex0): number {
+    return 0;
+  }
 }

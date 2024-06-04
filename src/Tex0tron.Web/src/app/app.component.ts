@@ -1,11 +1,14 @@
+import 'beercss';
+import 'material-dynamic-colors';
+
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import 'beercss';
+import { Tex0FormComponent } from './tex0/tex0-form.component';
 
 @Component({
   selector: 'tex0-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Tex0FormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -14,6 +17,7 @@ export class AppComponent implements OnInit {
   isLight: boolean = false;
 
   async ngOnInit() {
+    await beercss("theme", "#a0b1b9");
     this.isLight = await beercss("mode") == "light";
   }
 
