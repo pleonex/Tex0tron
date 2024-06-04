@@ -34,6 +34,12 @@ jobs:
         with:
           node-version: "20"
 
+      # Workaround for https://github.com/nodejs/node/issues/52682
+      - if: runner.os == 'Windows'
+        shell: bash  # Not pwsh
+        run: |
+          npm install -g npm
+
       - name: Get npm cache directory
         id: npm-cache-dir
         shell: bash

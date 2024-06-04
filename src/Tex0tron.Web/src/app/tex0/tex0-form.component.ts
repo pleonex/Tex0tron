@@ -44,7 +44,7 @@ export class Tex0FormComponent implements OnInit, OnDestroy {
       this.fieldsByColumns.push(group);
     }
 
-    const formFields: {[id: string]: FormControl} = {};
+    const formFields: Record<string, FormControl> = {};
     for (const fieldInfo of this.fields) {
       const extraValidators = [];
       if (fieldInfo.multipleOf) {
@@ -56,7 +56,7 @@ export class Tex0FormComponent implements OnInit, OnDestroy {
 
     this.tex0Form = new FormGroup(formFields);
 
-    this._formSub = this.tex0Form.valueChanges.subscribe(_ => this.notifyValueChange());
+    this._formSub = this.tex0Form.valueChanges.subscribe(() => this.notifyValueChange());
     this._tex0Sub = this.tex0Service.tex0$.subscribe(t => this.updateFormData(t));
   }
 

@@ -15,7 +15,7 @@ import { Tex0ValueComponent } from './tex0/tex0-value.component';
 })
 export class AppComponent implements OnInit {
   title = 'Tex0tron';
-  isLight: boolean = false;
+  isLight = false;
 
   async ngOnInit() {
     await beercss("theme", "#a0b1b9");
