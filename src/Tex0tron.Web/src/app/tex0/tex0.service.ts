@@ -7,7 +7,7 @@ import { Tex0Serializer } from "./tex0.serializer";
   providedIn: 'root'
 })
 export class Tex0Service {
-  private _tex0Value = new BehaviorSubject<number>(0);
+  private _tex0Value = new BehaviorSubject<bigint>(0n);
 
   tex0Value$ = this._tex0Value.asObservable();
   tex0$: Observable<Tex0> = this._tex0Value.asObservable()
@@ -18,7 +18,7 @@ export class Tex0Service {
     this._tex0Value.next(newValue);
   }
 
-  updateValue(newValue: number): void {
+  updateValue(newValue: bigint): void {
     this._tex0Value.next(newValue);
   }
 }
