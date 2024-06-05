@@ -18,11 +18,11 @@
             ]
         },
         {
-            "name": "Run MyConsole",
+            "name": "[CLI] Run debug",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "Build",
-            "program": "${workspaceFolder}/src/MyConsole/bin/Debug/net8.0/MyConsole.dll",
+            "program": "${workspaceFolder}/src/Tex0tron.Console/bin/Debug/net8.0/Tex0tron.Console.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,

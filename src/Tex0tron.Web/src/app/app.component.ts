@@ -1,10 +1,12 @@
 import 'beercss';
 import 'material-dynamic-colors';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, VERSION } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Tex0FormComponent } from './tex0/tex0-form.component';
 import { Tex0ValueComponent } from './tex0/tex0-value.component';
+import { mdiGithub } from '@mdi/js';
+import { version } from '../version';
 
 @Component({
   selector: 'tex0-root',
@@ -14,8 +16,12 @@ import { Tex0ValueComponent } from './tex0/tex0-value.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  title = 'Tex0tron';
+  title = 'PS2 GPU TEX0 command visualizer';
   isLight = false;
+  githubIcon = mdiGithub;
+
+  appVersion = version;
+  angularVersion = VERSION.full;
 
   async ngOnInit() {
     await beercss("theme", "#a0b1b9");
@@ -30,5 +36,9 @@ export class AppComponent implements OnInit {
     }
 
     this.isLight = !this.isLight;
+  }
+
+  openGitHubRepo(): void {
+    window.open("https://github.com/pleonex/tex0tron", "_blank");
   }
 }

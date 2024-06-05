@@ -26,6 +26,8 @@ public static class AngularTasks
     /// </summary>
     [TaskName(ModuleName + ".BuildProject")]
     [IsDependentOn(typeof(NpmRestoreTask))]
+    [IsDependentOn(typeof(NpmSetVersionTask))]
+    [IsDependentOn(typeof(GenerateJsVersionTask))]
     [IsDependentOn(typeof(BuildTask))]
     [IsDependentOn(typeof(LintTask))]
     public class BuildProjectTask : FrostingTask

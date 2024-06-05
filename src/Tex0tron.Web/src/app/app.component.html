@@ -1,6 +1,13 @@
 <header>
   <nav>
     <h5 class="max center-align">{{title}}</h5>
+    <button class="circle transparent" (click)="openGitHubRepo()">
+      <i>
+        <svg viewBox="0 0 24 24">
+          <path [attr.d]="githubIcon"></path>
+        </svg>
+      </i>
+    </button>
     <button class="circle transparent" (click)="changeTheme()">
       @if (isLight) {
         <i>light_mode</i>
@@ -11,10 +18,19 @@
   </nav>
 </header>
 
+
 <main class="responsive">
   <tex0-value></tex0-value>
 
   <div class="space"></div>
 
   <tex0-form></tex0-form>
+
+  <div class="large-space"></div>
+
+  <div class="row large-space wrap">
+    <p>Made with 💻 by pleonex</p>
+    <p>App version v{{appVersion}}</p>
+    <p>Angular v{{angularVersion}}</p>
+  </div>
 </main>

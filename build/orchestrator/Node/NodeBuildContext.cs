@@ -9,9 +9,12 @@ public class NodeBuildContext
     {
         ExactRestore = false;
         NodeProjectPath = "";
+        JsVersionFile = "src/version.ts";
     }
 
     public bool ExactRestore { get; set; }
+
+    public string JsVersionFile { get; set; }
 
     public string NodeProjectPath { get; set; }
 

@@ -14,8 +14,17 @@
         [(ngModel)]="tex0Value">
     <label for="tex0value">Hexadecimal value</label>
 
-    @if (valueBox.validationMessage) {
-      <span class="error">{{valueBox.validationMessage}}</span>
+    @if (!valueBox.validity.valid) {
+      <span class="error">
+        @if (valueBox.validity.patternMismatch) {
+          Invalid hexadecimal number.
+          It has to start with "0x" and contain numbers 0 to 9 and/or characters 'a' to 'f'.
+        } @else {
+          {{valueBox.validationMessage}}
+        }
+      </span>
+    } @else {
+      <span class="helper">Type the TEX0 command as hexadecimal value (base 16).</span>
     }
   </div>
 </article>
